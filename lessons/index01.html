@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .reply-form {
+                display: none;
+            }
+        </style>
+        <script defer src="./script01-geo.js"></script>
+        <script defer src="./script01.js"></script>
+        <script defer src="./script01-todo.js"></script>
+    </head>
+
+    <body>
+        <!-- У вас есть дерево комментариев, представленное в виде вложенных элементов ‹div›. Каждый комментарий имеет кнопку "Ответить", при нажатии на которую открывается форма для написания ответа.
+        Ваша задача - реализовать функциональность, чтобы при нажатии на кнопку "Ответить", только форма этого конкретного комментария открывалась, остальные формы оставались скрытыми. -->
+        <h2>дерево комментариев</h2>
+        <div class="comment">
+            <p>Комментарий 1</p>
+            <button class="reply-button">Ответить</button>
+            <form class="reply-form">
+                <textarea placeholder="Напишите ответ..."></textarea>
+                <button class="submit-button">Отправить</button>
+            </form>
+        </div>
+        <div class="comment">
+            <p>Комментарий 1.1</p>
+            <button class="reply-button">Ответить</button>
+            <form class="reply-form">
+                <textarea placeholder="Напишите ответ..."></textarea>
+                <button class="submit-button">Отправить</button>
+            </form>
+        </div>
+        <div class="comment">
+            <p>Комментарий 1.2</p>
+            <button class="reply-button">Ответить</button>
+            <form class="reply-form">
+                <textarea placeholder="Напишите ответ..."></textarea>
+                <button class="submit-button">Отправить</button>
+            </form>
+        </div>
+
+        <!--TODO LIST-->
+        <h2>Список дел</h2>
+        <input type="text" class="task-input" placeholder="Добавить задачу">
+        <button class="add-button">Добавить</button>
+        <ul class="task-list"></ul>
+        <button class="clear">Clear all LocalStorage !!!</button>
+    </body>
+
+</html>
