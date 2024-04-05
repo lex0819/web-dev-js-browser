@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script defer src="./script02.js"></script>
+        <style>
+            .content02 {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .content02.visible {
+                opacity: 1;
+                max-height: 500px;
+                /* Высота контента при отображении */
+                transition: all 0.3s ease;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            /* Стили для прелоадера */
+            .loader {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .loader .fa-spinner {
+                font-size: 48px;
+                color: #333;
+                animation: spin 1s linear infinite;
+            }
+
+            /* Анимация вращения */
+            @keyframes spin {
+                0% {
+                    transform: grotate (Odeg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Скрыть контент при отображении прелоадера */
+            hidden {
+                display: none;
+            }
+        </style>
+        <style>
+            #modal {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 300px;
+                padding: 20px;
+                background-color: #f0f0f0;
+                text-align: center;
+            }
+
+            .open-modal-btn {
+                padding: 10px 20px;
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+            }
+        </style>
+        <style>
+            .circle {
+                width: 100px;
+                height: 100px;
+                background-color: lightpink;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.5s ease;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="task01">
+            <h2>Task01</h2>
+            <div class="price">
+                <div data-price="25">Товар 1 price=25 rating=5</div>
+                <div data-price="50">Товар 2 price=50 rating=3</div>
+                <div data-price="75">Товар 3 price=75 rating=4</div>
+                <div data-price="100">Товар 4 price=100 rating=2</div>
+            </div>
+            <br>
+            <div class="rating">
+                <div data-rating="5">Товар 1 price=25 rating=5</div>
+                <div data-rating="3">Товар 2 price=50 rating=3</div>
+                <div data-rating="4">Товар 3 price=75 rating=4</div>
+                <div data-rating="2">Товар 4 price=100 rating=2</div>
+            </div>
+        </div>
+        <div class="task02">
+            <h2>Task02</h2>
+            <input type="checkbox" id="toggleCheckbox">
+            <label for="toggleCheckbox">Показать/Скрыть контент</label>
+            <div class="content02">
+                <h1>Header</h1>
+                <p>Содержимое контента</p>
+            </div>
+        </div>
+        <div class="task03">
+            <h2>Task 03</h2>
+            <div class="loader">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="content03 hidden">
+                <h1>Header</h1>
+                <p>Содержимое страницы</p>
+                <img src="https://fanibani.ru/wp-content/uploads/2022/12/kotenok-koshka-kot.jpg" alt="кот"
+                    style="width: 500px; height: auto;">
+            </div>
+        </div>
+        <div class="task04">
+            <h2>погружение и всплытие</h2>
+            <div>
+                <p>
+                    <span style="background: red;">
+                        Click me. It's span
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="task05">
+            <h2>Modal window</h2>
+            <button class="open-modal-btn">Открыть модальное окно</button>
+            <div id="modal">
+                <h2>Модальное окно</h2>
+                <p>Нажмите вне окна, чтобы закрыть его.</p>
+            </div>
+        </div>
+        <div class="task06">
+            <h2>AutoClocker</h2>
+            <button id="btn">Auto Click</button>
+        </div>
+        <div class="task07">
+            <h2>Events of mouse etc</h2>
+            <ul class="menu">
+                <li class="menu-item">Пункт 1</li>
+                <li class="menu-item">Пункт 2</li>
+                <li class="menu-item">Пункт 3</li>
+            </ul>
+        </div>
+        <div class="task09">
+            <div class="circle"></div>
+        </div>
+    </body>
+
+</html>

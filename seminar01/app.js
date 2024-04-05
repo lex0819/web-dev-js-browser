@@ -10,64 +10,70 @@ const data = [
 
 const app = document.getElementById('app');
 
-const showData = () => {
-    app.innerHTML = '';
-    data.forEach((item) => {
-        const listItem = document.createElement('div');
-        listItem.classList.add('container');
-        listItem.classList.add('text-center');
-        listItem.innerHTML = `
-            <div class="row">
-                <div class="col p-2">
-                <h3>${item.name}</h3>  <strong>${item.time}</strong>
-                </div>
-                <div class="col p-2">
-                Максимально в группе <b class="text-primary">${item.max}</b> человек,  записалось <i class="text-success">${item.current}</i>
-                </div>
-                <div class="col p-1">
-                <button type="button" class="btn btn-success add m-2">Записаться</button>
-                <button type="button" class="btn btn-danger remove m-2">Отменить запись</button>
-                </div>
-            </div>
-        `;
-        if (item.current >= item.max) {
-            listItem.querySelector('.add').setAttribute('disabled', '');
-        }
+function createDataHTML(elem) {
+    return `
+    <div class="row">
+        <div class="col p-2">
+            <h3>${elem.name}</h3>  <strong>${elem.time}</strong>
+        </div>
+        <div class="col p-2">
+            Максимально в группе <b class="text-primary">${elem.max}</b> человек,  записалось <i class="text-success">${elem.current}</i>
+        </div>
+        <div class="col p-1">
+            <button type="button" class="btn btn-success add m-2">Записаться</button>
+            <button type="button" class="btn btn-danger remove m-2">Отменить запись</button>
+        </div>
+    </div>
+    `;
+}
 
-        app.appendChild(listItem);
-    });
-};
-
-showData();
-
-app.addEventListener('click', (e) => {
-    const btn = e.target;
-    const listItem = btn.closest('.row');
+const addDataItem = (item) => {
+    const listItem = item.closest('.row');
+    const targetName = listItem.querySelector('h3').textContent;
     const max = Number.parseInt(
         listItem.querySelector('.text-primary').textContent
     );
     const current = listItem.querySelector('.text-success');
     let count = Number.parseInt(current.textContent);
-
-    if (btn.classList.contains('add')) {
-        if (count < max) {
-            count += 1;
-            current.textContent = count;
-            if (count >= max) {
-                btn.setAttribute('disabled', true);
-            }
+    if (count < max) {
+        count += 1;
+        current.textContent = count;
+        if (count >= max) {
+            item.setAttribute('disabled', true);
         }
+        const dataItem = data.find((it) => targetName === it.name);
+        dataItem.current = count;
+    }
+};
+
+const removeDataItem = (item) => {
+    const listItem = item.closest('.row');
+    const targetName = listItem.querySelector('h3').textContent;
+    const max = Number.parseInt(
+        listItem.querySelector('.text-primary').textContent
+    );
+    const current = listItem.querySelector('.text-success');
+    let count = Number.parseInt(current.textContent);
+    const addBtn = listItem.querySelector('.add');
+    if (count > 0) {
+        count -= 1;
+    }
+    current.textContent = count;
+    const dataItem = data.find((it) => targetName === it.name);
+    dataItem.current = count;
+    if (count < max) {
+        addBtn.removeAttribute('disabled');
+    }
+};
+
+app.innerHTML = data.map((item) => createDataHTML(item)).join('');
+
+app.addEventListener('click', ({ target }) => {
+    if (target.classList.contains('add')) {
+        addDataItem(target);
     }
 
-    if (btn.classList.contains('remove')) {
-        const addBtn = listItem.querySelector('.add');
-        if (count > 0) {
-            count -= 1;
-        }
-        current.textContent = count;
-
-        if (count < max) {
-            addBtn.removeAttribute('disabled');
-        }
+    if (target.classList.contains('remove')) {
+        removeDataItem(target);
     }
 });
