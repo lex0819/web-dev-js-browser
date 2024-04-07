@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>lesson02 Menu</title>
+        <link rel="stylesheet" href="lesson02.css">
+        <script defer src="./lesson02.js"></script>
+    </head>
+
+    <body>
+        <div class="task01">
+            <h2>Task 01</h2>
+            <nav class="menu">
+                <div class="wrap">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="#">Main</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Service</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Contacts</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="task02">
+            <div class="wrap">
+                <h2>Модальное окно</h2>
+                <button type="button" id="open-modal">Открыть модальное окно</button>
+                <div class="modal">
+                    <h3>Модальное окно</h3>
+                    <button type="button" id="close-modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+        <div class="task03">
+            <div class="wrap">
+                <h2>кнопка "Купить"</h2>
+                <button type="button" id="buy">Купить</button>
+            </div>
+        </div>
+        <div class="task04">
+            <div class="wrap">
+                <h2>онлайн опросник</h2>
+                <form action="" method="get" name="quest">
+                    <p class="query">
+                        <legend>Question 1. What is your prefer color?</legend>
+                    <div>
+                        <input type="radio" id="blue" name="color" value="blue">
+                        <label for="blue">blue</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="green" name="color" value="green">
+                        <label for="green">green</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="red" name="color" value="red">
+                        <label for="red">red</label>
+                    </div>
+                    </p>
+                    <p class="query">
+                        <legend>Question 2. What kind of pets do you like?</legend>
+                    <div>
+                        <input type="radio" id="dog" name="pet" value="dog">
+                        <label for="dog">dog</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cat" name="pet" value="cat">
+                        <label for="cat">cat</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="parrot" name="pet" value="parrot">
+                        <label for="parrot">parrot</label>
+                    </div>
+                    </p>
+                    <p class="query">
+                        <legend>Question 3. What kind of delicacies do you like?</legend>
+                    <div>
+                        <input type="radio" id="cake" name="delicacies" value="cake">
+                        <label for="cake">cake</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="pizza" name="delicacies" value="pizza">
+                        <label for="pizza">pizza</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="hamburger" name="delicacies" value="hamburger">
+                        <label for="hamburger">hamburger</label>
+                    </div>
+                    </p>
+                    <button type="submit" id="end">Завершить опрос</button>
+                </form>
+                <div class="result"></div>
+            </div>
+        </div>
+    </body>
+
+</html>
