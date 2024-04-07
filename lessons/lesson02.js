@@ -6,12 +6,13 @@
 // 2. Эффекты наведения: При наведении курсора на пункты меню должны применяться эффекты (например, изменение цвета текста или фона) для подсказки пользователю, что пункт меню является интерактивным.
 
 const menu = document.querySelector('.menu-list');
-const menuList = document.querySelectorAll('.menu-item');
 
 menu.addEventListener('click', ({ target }) => {
     const link = target.closest('.menu-item');
-    menuList.forEach((el) => el.classList.remove('active'));
-    link.classList.add('active');
+    if (link) {
+        menu.querySelector('.menu-item.active')?.classList.remove('active');
+        link.classList.add('active');
+    }
 });
 
 // Задание 2 (тайминг 15 минут)
