@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script defer src="./script03.js"></script>
+        <script defer src="./script03-fetch.js"></script>
+        <style>
+            .invalid {
+                border-color: red;
+            }
+
+            #error {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="task01">
+            <h2>Task 01</h2>
+            <form name="superForm">
+                <select name="selectForm" multiple>
+                    <option value="GeekBrains" selected>ГикБрейнс</option>
+                    <option value="SkillBox" selected>СкилБокс</option>
+                    <option value="SkillFactory">СкилФэктори</option>
+                </select>
+            </form>
+        </div>
+        <div class="task02">
+            <h2>Task 02</h2>
+            <h1>Выберите страну:</h1>
+            <form id="country-form">
+                <select id="country-select">
+                    <option value="">Выберите страну</option>
+                    <option value="russia">Россия</option>
+                    <option value="usa">США</option>
+                    <option value="china">Китай</option>
+                </select>
+            </form>
+            <h2>Столица: </h2>
+            <p id="capital-info">Выберите страну, чтобы узнать столицу. </p>
+        </div>
+        <div class="task03">
+            <h2>Task 03</h2>
+            <h1>Список товаров</h1>
+            <label for="sort-select">Сортировка: </label>
+            <select id="sort-select">
+                <option value="asc">По возрастанию цены</option>
+                <option value="desc">По убыванию цены</option>
+            </select>
+            <ul id="product-list">
+                <li class="product-item">Товар 1 - $50</li>
+                <li class="product-item">Товар 2 - $30</li>
+                <li class="product-item">Товар 3 - $70</li>
+                <li class="product-item">Товар 4 - $20</li>
+            </ul>
+        </div>
+        <div class="task04">
+            <h2>task 04</h2>
+            <h2>Check Email</h2>
+            <form name="superForm01">
+                Baw email: <input type="email" name="input">
+                <div id="error"></div>
+            </form>
+        </div>
+        <div class="task05">
+            <h2>Task 05</h2>
+            <h2>Form Input, Change, Copy, Paste</h2>
+            <form name="superForm05">
+                <p>
+                    email: <input type="email" name="email">
+                </p>
+                <div>
+                    selectForm: <select name="selectForm">
+                        <option value="GeekBrains">ГикБрейнс</option>
+                        <option value="SkillBox">СкилБокс</option>
+                        <option value="SkillFactory">СкилФэктори</option>
+                    </select>
+                </div>
+                <p>
+                    checkbox: <input type="checkbox" name="checkbox">
+                </p>
+            </form>
+        </div>
+        <div class="task06">
+            <h2>Task 06 counter of chars in the textarea</h2>
+            <h1>Форма комментария</h1>
+            <textarea id="comment-input" rows="4" cols="50"></textarea>
+            <p>Количество символов: <span id="char-count">0</span></p>
+        </div>
+        <div class="task07">
+            <h2>Task 07 Form submit</h2>
+            <form name="superForm07" onsubmit="console.log('Форма отправлена'); return false">
+                email: <input type="email" name="email">
+                checkbox: <input type="checkbox" name="checkbox">
+                <input type="submit">
+            </form>
+        </div>
+        <div class="task08">
+            <h2>Task 08 Send Form</h2>
+            <form name="superForm08">
+                title: <input name="title" value="test product">
+                <br />
+                price: <input name="price" type="number" value="13.5">
+                <br />
+                description: <input name="description" value="lorem ipsum set">
+                <br />
+                image:
+                <input name="image" value="https://i.pravatar.cc">
+                <br />
+                category: <input name="category" value="electronic">
+                <input type="submit">
+            </form>
+        </div>
+        <div class="task09">
+            <h2>Task 09 random user</h2>
+            <h1>Информация o случайных пользователях</h1>
+            <label for="sort-select">Сортировка: </label>
+            <select id="sort-select09">
+                <option value=""> - </option>
+                <option value="name">По имени</option>
+                <option value="age ASC">По возрасту ASC</option>
+                <option value="age DESC">По возрасту DESC</option>
+            </select>
+            <div id="user-list"></div>
+        </div>
+    </body>
+
+</html>

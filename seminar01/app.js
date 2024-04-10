@@ -8,7 +8,11 @@ const data = [
     { name: 'yoga', time: '2023-12-21 15:00:00', max: 6, current: 6 },
 ];
 
-let sportList = JSON.parse(localStorage.getItem('sport')) || [];
+let sportList = [];
+
+if (localStorage.getItem('sport') !== '') {
+    sportList = JSON.parse(localStorage.getItem('sport'));
+}
 
 const app = document.getElementById('app');
 

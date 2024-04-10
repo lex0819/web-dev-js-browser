@@ -6,9 +6,9 @@ const taskList = document.querySelector('.task-list');
 const clearBtn = document.querySelector('.clear');
 
 // Восстановление списка дел из локального хранилища при загрузке страницы
-if (localStorage.getItem('tasks')) {
-    taskList.innerHTML = localStorage.getItem('tasks');
-}
+taskList.innerHTML = localStorage.getItem('tasks')
+    ? localStorage.getItem('tasks')
+    : '';
 
 clearBtn.addEventListener('click', () => {
     localStorage.clear();
